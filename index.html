@@ -1,0 +1,145 @@
+<!--Designed to be mobile and desktop compatible simultaneously - the same code works for both mobile and desktop-->
+<!--TO DO: Fix button line-height for mobile devices-->
+<!--       This site is best viewed on desktop, because of the line-height thing and some of the embedded content :) -->
+<!DOCTYPE html>
+<title>At216's Web Blog!</title>
+<link rel="icon" type="image/x-icon" href="/favicon_blue.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <div class='header_text'>
+        <span style='font-size:100px; line-height:100px'>At216's Web Blog!</span><br>
+        <button onclick='header(1)' style='display: inline-block' title='Index.html'>Index.html</button>
+        <button onclick='header(2)' style='display: inline-block' title='Subdomain sitemap'>Subdomain sitemap</button>
+        <button onclick='header(3)' style='display: inline-block' title='???'>What does this do?</button>
+        <!--Text-height influences how far the buttons are from the text (because they're in a font-sized line). -->
+    </div>
+</header>
+
+<body>
+    <div class='body_text'>
+        <br> <!--Fake padding from header-->
+        <div class='body_text'>
+            <span>
+                Welcome to my blog! I am At216, an avid programmer with 8+ years of experience. Most of my focus
+                in programming has been in web development (especially in web design), but I have recently been experimenting heavily in JavaScript. In addition, I have recently branched
+                out over the past year to work with web servers. I have showcased some of my favorite projects 
+                (those that are accessible over the internet) below, feel free to check them out in this blog or by 
+                following the URL link to see them in your browser. Thanks for stopping by!<br> -At216<br>
+            </span>
+        </div>
+        <br> <!--More fake padding from header-->
+
+        <table>
+            <tr>
+                <td style='width:51%;'><iframe src="/"></iframe></th>
+                <td>
+                    <div class='td_text'>
+                    This project is the literal flagship of my subdomain. I originally registered for this subdomain solely to host 
+                    it. This website generates a NodeJS server for download in you browser based on provided file path parameters. 
+                    I use this site often, when I want to run a local HTTP server on a computer I haven't written a server for. 
+                    With a server from this site, you can serve HTML, CSS, JavaScript, PNG, JPEG, and GIF files. It should be somewhat 
+                    straightforward to edit to increase compatibility for other filetypes as well (assuming you have some knowledge 
+                    of NodeJS or JavaScript). 
+                    Visit this project at <a href='/'>ServersNJS.w3spaces.com/</a>.
+                    </div> 
+                </td>
+            </tr> 
+            <tr><!--Buffer tr--><td><br></td></tr>
+
+            <tr>
+                <td style='width:50%;'><iframe src="/web-computer.html"></iframe></th>
+                <td>
+                    <div class='td_text'>
+                    This is my most recent project (not counting my blog). This is a basic, online computer simulator that 
+                    boasts a user-friendly GUI and several 'programs'. I am working to expand this project to include 
+                    multiple programs of my own (rather than embedding other websites) and a more advanced desktop/taskbar. 
+                    Visit this project at <a href='/web-computer.html'>ServersNJS.w3spaces.com/Web-Computer.html</a>.
+                    </div> 
+                </td>
+            </tr> 
+            <tr><!--Buffer tr--><td><br></td></tr>
+           
+            <tr>
+                <td style='width:50%;'><iframe src="/HTML-editor.html"></iframe></th>
+                <td>
+                    <div class='td_text'>
+                    This is one of my favorite (and most wanted) projects. Ever since I began programming in HTML, I wanted
+                    an simple and online HTML code editor and renderer. I tried to build this as a budding programmer, but 
+                    eventually encountered difficulties. Just recently (about 7 years later), I was experimenting with AJAX 
+                    and had a revelation moment about rendering HTML code in the browser. I sat down and tinkered with textarea 
+                    and iframe elements, ultimately constructing the project I had wished for for so long.  
+                    Visit this project at <a href='/HTML-editor.html'>ServersNJS.w3spaces.com/HTML-editor.html</a>.
+                    </div> 
+                </td>
+            </tr>
+            <tr><!--Buffer tr--><td><br></td></tr>
+            
+
+            
+        </table>
+
+    </div>
+</body>
+
+<style>
+    button:hover {
+        transform: rotate(20deg);
+    }
+    iframe {
+    width:100%;
+    height:250px;
+    border:none;
+    }
+    a {
+        color:blue;
+    }
+    td {
+        text-align: left;
+        font-size:2vw;
+        
+    }
+
+    header {
+        margin:0;
+        width:100%;
+        background-color:#33475b;
+        color:white;
+        height:auto;
+        /*line-height:100px;*/
+        line-height:50px;
+    }
+    .header_text {
+        margin:0px 10px 0px 10px;
+        /*font-size:100px;*/
+    }
+    
+
+    body {
+    margin:0;
+    width:100%;
+    background-color:#9dd9e3;
+    }
+    .body_text {
+        margin:0px 10% 0px 10px;
+        font-size:2vw;
+    }
+
+    .td_text {
+        margin: 0px 10px 0px 10px;
+    }
+</style>
+
+<script>
+    function header(n) {
+        if(parseInt(n) == 1) {
+            window.open("https://serversnjs.w3spaces.com")
+        }
+        if(parseInt(n) == 2) {
+            window.open("https://serversnjs.w3spaces.com/home.html")
+        }
+        if(parseInt(n) == 3) {
+            alert("I'm trying to find out what this button should do too! We'll see what happens as I work on this site :)")
+        }
+    }
+</script>
