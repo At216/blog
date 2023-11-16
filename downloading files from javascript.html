@@ -1,0 +1,215 @@
+
+<!--Designed to be mobile and desktop compatible simultaneously - the same code works for both mobile and desktop-->
+<!--TO DO: Fix button line-height for mobile devices-->
+<!--       This site is best viewed on desktop, because of the line-height thing and some of the embedded content :) -->
+<!DOCTYPE html>
+<title>At216's Web Blog - Downloading files from a website using JavaScript</title>
+<link rel="icon" type="image/x-icon" href="docs/assets/favicon_blue.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="description" content="Download files from your websites using JavaScript">
+<meta name="keywords" content="Download, files, website, developer, JavaScript">
+<meta name="author" content="At216">
+
+<header>
+    <div class='header_text'>
+        <span style='font-size:100px; line-height:100px'>At216's Web Blog</span><br>
+        <button onclick='header(1)' style='display: inline-block' title='Main site'>Main site</button>
+        <button onclick='header(2)' style='display: inline-block' title='Subdomain sitemap'>Subdomain sitemap</button>
+        <button onclick='header(3)' style='display: inline-block' title='Blog sitemap'>Blog sitemap</button>
+        <!--Text-height influences how far the buttons are from the text (because they're in a font-sized line). -->
+    </div>
+</header>
+
+<body>
+    <div class='body_text'>
+            <span><br>
+                <h1>Downloading files from your websites using JavaScript</h1>
+                <h2>Sometimes, your websites need to offer downloadable content, 
+                easily and serverless. </h2>11/16/2023<br><br>
+                
+              <figure>
+                <image src='https://at216.github.io/blog/docs/assets/HTML%20code%20editor.png' alt='A screenshot of my HTML web-editor project, one part of which enables users to download their code as an HTML file. '> 
+               	<figcaption>A screenshot of my HTML web-editor project, one part of which enables users to download their code as an HTML file when they press the 'Download as HTML!' button. </figcaption>
+               </figure>
+               
+               <br><br>
+               A little while ago, I was experimenting with a website project that would 
+               take input in the form of HTML code and package it into an HTML file. I 
+               needed a way to download this file (presumably with JavaScript) without
+               dealing with download servers and plugins. I sought some online help, and 
+               leaned a pretty good method to accomplish this. After a little bit of tweaking 
+               and personalization, I am presenting it below. Keep in mind it's best viewed in 
+               a widescreen browser. 
+               
+               <br><br>
+               <div class='code-container'>
+                 <code>
+                   function Download() {<br>
+                   const file = new File(['file contents'], 'name.html', { <br>
+                   type: 'text/plain',<br>
+                   }) <br>
+					<br>
+                   const link = document.createElement('a')<br>
+                   const url = URL.createObjectURL(file)<br>
+					<br>
+                   link.href = url<br>
+                   link.download = file.name<br>
+                   document.body.appendChild(link)<br>
+                   link.click()<br>
+					<br>
+                   document.body.removeChild(link)<br>
+                   window.URL.revokeObjectURL(url)<br>
+                   }
+                  </code>
+               </div>
+               
+               <br><br>
+               Let's break it down. 
+               
+               <br><br>
+               <h2>Part 1:</h2>
+               <div class='code-container'>
+                 <code>
+                   function Download() {<br>
+                   const file = new File(['file contents'], 'name.html', { <br>
+                   type: 'text/plain',<br>
+                   }) <br>
+                  </code>
+			   </div><br>
+               When the function <code>Download()</code> is called, 
+               it creates a variable <code>File</code> that holds a string of 
+               the contents of the file to be downloaded (in this case, 
+               'file contents'). The name of the file is set in the next parameter,
+               which is also a string (in this case, 'name.html'). The file extension
+               can resonably be anything (like .txt, .docx, etc), but compatibility of 
+               documents with an odd file extension with a document reader depends on you. 
+               The third parameter defines the type of document to be downloaded. 
+               'text/plain' works for text and HTML files, as well as many other files, but
+               be sure to check the mimetype of whatever document you want to produce and 
+               change 'text/plain' appropriately. 
+                
+                
+               <br><br>
+               <h2>Part 2:</h2>
+               <div class='code-container'>
+                 <code>
+                   const link = document.createElement('a')<br>
+				   const url = URL.createObjectURL(file)
+                  </code>
+			   </div><br>
+               The first line of this part defines a variable <code>link</code>, which 
+               is used to contain an HTML <code>a</code> element. The second line of this 
+               part creates a variable <code>url</code> which is used to make a URL link to 
+               the <code>file</code> variable that we made in Part 1. 
+               
+               
+               <br><br>
+               <h2>Part 3:</h2>
+               <div class='code-container'>
+                 <code>
+                   link.href = url<br>
+                   link.download = file.name<br>
+                   document.body.appendChild(link)<br>
+                   link.click()
+                  </code>
+			   </div><br>
+               In this part, we first refer to the <code>link</code> variable and assign it 
+               the URL we made in Part 2. We then establish the link as a download link 
+               (a link that downloads a file, rather than opening a new webpage), attach 
+               the link to the HTML body, and click the link to begin the download. 
+               
+               <br><br>
+               <h2>In summary:</h2>
+               First, we established what the download file would be; we wrote the download
+               body and gave it a name. We then created a URL link to the download file and 
+               automatically selected it, intitiating the download. 
+               
+               <br><br>
+			   I hope this helps! Enjoy your programming journey!	
+               
+            
+               
+            </span>
+        <br> 
+    </div>
+</body><br>
+
+
+
+<footer>
+<span>Written by At216, last updated 11/16/2023</span><br>
+<span>Attrubution to <a href='https://javascript.plainenglish.io/javascript-create-file-c36f8bccb3be'>javascript.plainenglish.io</a>. 
+</footer>
+
+<style>
+    button:hover {
+        transform: rotate(20deg);
+    }
+    img {
+    	width:100%;
+        height:auto;
+        border: 1px solid black;
+    }
+    figure {
+    	width:100%;
+        margin:auto;
+    }
+    a {
+        color:blue;
+    }
+    .code-container {
+    	border: 1px solid black;
+    }
+        
+    
+
+    header {
+        margin:0;
+        width:100%;
+        background-color:#33475b;
+        color:white;
+        height:auto;
+        /*line-height:100px;*/
+        line-height:50px;
+    }
+    .header_text {
+        margin:0px 10px 0px 10px;
+        /*font-size:100px;*/
+    }
+    
+
+    body {
+      margin:0;
+      width:100%;
+      background-color:#D9DDDC;
+      
+      min-height: 100vh; 		/**************For footer***************/
+  	  display: flex;			/**************For footer***************/
+  	  flex-direction: column;	/**************For footer***************/
+    }
+    .body_text {
+        margin:0px 15px; 0px 10px;
+        font-size:3vw;
+    }
+
+    footer {
+      margin-top:auto;
+      margin:0px 15px; 0px 10px;
+      font-size:2vw;
+    }
+</style>
+
+<script>
+    function header(n) {
+        if(parseInt(n) == 1) {
+            alert('This link is *almost* here!')
+        }
+        if(parseInt(n) == 2) {
+            window.open("https://at216.github.io/")
+        }
+        if(parseInt(n) == 3) {
+            alert("I'm trying to find out what this button should do too! We'll see what happens as I work on this site :)")
+        }
+    }
+</script>
