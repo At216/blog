@@ -1,0 +1,126 @@
+
+<!--Designed to be mobile and desktop compatible simultaneously - the same code works for both mobile and desktop-->
+<!--TO DO: Fix button line-height for mobile devices-->
+<!--       This site is best viewed on desktop, because of the line-height thing and some of the embedded content :) -->
+<!DOCTYPE html>
+<title>At216's Web Blog!</title>
+<link rel="icon" type="image/x-icon" href="docs/assets/favicon_blue.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <div class='header_text'>
+        <span style='font-size:100px; line-height:100px'>At216's Web Blog!</span><br>
+        <button onclick='header(1)' style='display: inline-block' title='Main site'>Main site</button>
+        <button onclick='header(2)' style='display: inline-block' title='Subdomain sitemap'>Subdomain sitemap</button>
+        <button onclick='header(3)' style='display: inline-block' title='???'>What does this do?</button>
+        <!--Text-height influences how far the buttons are from the text (because they're in a font-sized line). -->
+    </div>
+</header>
+
+<body>
+    <div class='body_text'>
+        <br> <!--Fake padding from header-->
+        <div class='body_text'>
+            <h2>Let's talk about playing guitar</h2>
+                <h3>Beginning steps and recomendations</h3>1/14/2024<br><br>
+
+            <figure>
+                <image src='https://t4.ftcdn.net/jpg/00/64/91/37/360_F_64913707_PNS2WMobSFvvUgZrr4LuXbPUmpTSlBl1.jpg' alt='A picture of a classical guitar. '> 
+               	<figcaption style='font-size:1.5vw'>Caption: A picture of a classical guitar. Thanks <a href='https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dguitar&psig=AOvVaw34L2sGXKzYe5Zj3mwQMtdY&ust=1705383851782000&source=images&cd=vfe&ved=0CBMQjRxqFwoTCNDglojY3oMDFQAAAAAdAAAAABAE'>Adobe Stock</a></a></figcaption>
+               </figure>
+               
+               <br><br>
+               I consider myself an avid, intermediate guitarist. I have four guitars of varying purposes, and I enjoy playing each of them 
+               every day. I find them relaxing to play, and I really only perform them for my own happiness. I am self-taught to a large degree, 
+               and I am responsible (and motivated) for my own learning. 
+               <br><br>
+               One pattern I notice in guitarists that fall out of love for their instrument is a lack of motivation. These guitarists feel that 
+               they experience too much pressure to study advanced skills and concepts, so they drift away from playing. Advanced skills and concepts, 
+               such as scales and music theory, are great to know but aren't necessary to build confidence in an instrument. 
+               The advice I can give to beginning guitarists is to just play songs that they like and tinker around on their guitar, and really 
+               follow what they enjoy doing. When they feel ready to 'level up' their skills, they should definitely seek more advanced topics, but 
+               not necessarily before then. 
+        </div>
+        <br> <!--More fake padding from header-->
+   
+    </div>
+        
+</body>
+<footer>
+    <span>Written by At216, last updated 1/15/2024</span><br>
+    <span>Attrubution to <a href='https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dguitar&psig=AOvVaw34L2sGXKzYe5Zj3mwQMtdY&ust=1705383851782000&source=images&cd=vfe&ved=0CBMQjRxqFwoTCNDglojY3oMDFQAAAAAdAAAAABAE'>Adobe Stock</a> for their picture. 
+    </footer>
+
+
+<style>
+    button:hover {
+        transform: rotate(20deg);
+    }
+    iframe {
+    width:100%;
+    height:250px;
+    border:none;
+    background-color:white;
+    }
+    a {
+        color:blue;
+    }
+    td {
+        text-align: left;
+        font-size:2vw;
+        
+    }
+
+    header {
+        margin:0;
+        width:100%;
+        background-color:#33475b;
+        color:white;
+        height:auto;
+        /*line-height:100px;*/
+        line-height:50px;
+    }
+    .header_text {
+        margin:0px 10px 0px 10px;
+        /*font-size:100px;*/
+    }
+    
+
+    body {
+    margin:0;
+    width:100%;
+    background-color:#00ADFF;
+    color:#C5CCCF;
+
+    min-height: 100vh; 		/**************For footer***************/
+  	display: flex;			/**************For footer***************/
+  	flex-direction: column;	/**************For footer***************/
+    }
+    .body_text {
+        margin:5px 15% 5px 10%;
+        font-size:2vw;
+    }
+
+    a {
+        color:blue;
+    }
+    footer {
+      margin-top:auto;
+      margin:0px 15px 0px 10px;
+      font-size:2vw;
+    }
+</style>
+
+<script>
+    function header(n) {
+        if(parseInt(n) == 1) {
+            window.open("https://at216.github.io/blog/")
+        }
+        if(parseInt(n) == 2) {
+            alert('You are here!')
+        }
+        if(parseInt(n) == 3) {
+            alert("I'm trying to find out what this button should do too! We'll see what happens as I work on this site :)")
+        }
+    }
+</script>
