@@ -1,0 +1,134 @@
+
+<!--Designed to be mobile and desktop compatible simultaneously - the same code works for both mobile and desktop-->
+<!--TO DO: Fix button line-height for mobile devices-->
+<!--       This site is best viewed on desktop, because of the line-height thing and some of the embedded content :) -->
+<!DOCTYPE html>
+<title>At216's Web Blog!</title>
+<link rel="icon" type="image/x-icon" href="docs/assets/favicon_blue.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <div class='header_text'>
+        <span style='font-size:100px; line-height:100px'>At216's Web Blog!</span><br>
+        <button onclick='header(1)' style='display: inline-block' title='Main site'>Main site</button>
+        <button onclick='header(2)' style='display: inline-block' title='Subdomain sitemap'>Subdomain sitemap</button>
+        <button onclick='header(3)' style='display: inline-block' title='???'>What does this do?</button>
+        <!--Text-height influences how far the buttons are from the text (because they're in a font-sized line). -->
+    </div>
+</header>
+
+<body>
+    <div class='body_text'>
+        <br> <!--Fake padding from header-->
+        <div class='body_text'>
+            <h2>Let's talk about web advertisements</h2>
+                <h3>Should there be boundaries?</h3>1/16/2024<br><br>
+
+            <figure>
+                <image style='width:100%' src='https://media.istockphoto.com/id/1050003614/vector/online-ads.jpg?s=612x612&w=0&k=20&c=J89rB9BpjjVz97TP0Ga-edLMiqNhPqpBzz5zmzfLsZw=' alt='A picture of a classical guitar. '> 
+               	<figcaption style='font-size:1.5vw'>Caption: A depiction of internet advertisements. Website owners profit from these advertisements, but at what cost should they limit them. Thanks <a href='https://www.istockphoto.com/photos/internet-ad'>iStock</a> for the image</figcaption>
+            </figure>
+               
+               <br><br>
+               &nbsp;&nbsp;We encounter internet advertisements almost every time we visit a website. Internet advertisements are great for the website owner, 
+               as they can make revenue from them. However, some websites are so chock-full of advertisements that they experience significant 
+               delays in loading and are difficult to use. Some websites, such as <a href='https://www.mathsisfun.com/'>Mathisfun.com</a>, practice 
+               a solution to intrusive advertisements that I appreciate (and believe many others appreciate also). 
+
+               <br><br>
+               &nbsp;&nbsp;When browsing Mathisfun.com, I come across one singular advertisements on each page. This advertisement has a button beside 
+               it that minimizes it. In addition, Mathisfun.com has a button that hides the advertisiment across all pages for a period of time. 
+               According to the developer, <br>
+               <div style="padding: 0px 10% 0px 10%"><br>
+               <code >Ads can sometimes be distracting, so you can hide them for 36 hours (yes they come back, but you can hide them again).</code>
+               </div><br>
+
+               In other words, you have the choice to opt out of advertisements. We already are given choices on most websites to opt out of 
+               data tracking out of reasons for courtesy (and frankly, sometimes legality). Website developers should take the next step, and 
+               let us choose our browsing experience in full &#8212; without internet advertisements
+        </div>
+        <br> <!--More fake padding from header-->
+   
+    </div>
+        
+</body>
+<footer>
+    <span>Written by At216, last updated 1/16/2024</span><br>
+    <span>Attrubution to <a href='https://www.mathsisfun.com/'>Mathisfun.com</a> for their leading example<br>
+    and <a href="https://www.istockphoto.com/">iStock</a> for their image. 
+    </span>
+    </footer>
+
+
+<style>
+    button:hover {
+        transform: rotate(20deg);
+    }
+    iframe {
+    width:100%;
+    height:250px;
+    border:none;
+    background-color:white;
+    }
+    a {
+        color:blue;
+    }
+    td {
+        text-align: left;
+        font-size:2vw;
+        
+    }
+
+    header {
+        margin:0;
+        width:100%;
+        background-color:#33475b;
+        color:white;
+        height:auto;
+        /*line-height:100px;*/
+        line-height:50px;
+    }
+    .header_text {
+        margin:0px 10px 0px 10px;
+        /*font-size:100px;*/
+    }
+    
+
+    body {
+    margin:0;
+    width:100%;
+    background-color:#4ECAFF;
+    color:#C5CCCF;
+
+    min-height: 100vh; 		/**************For footer***************/
+  	display: flex;			/**************For footer***************/
+  	flex-direction: column;	/**************For footer***************/
+    }
+    .body_text {
+        margin:5px 10% 5px 5%;
+        font-size:1.7vw;
+    }
+
+    a {
+        color:blue;
+    }
+    footer {
+      margin-top:auto;
+      margin:0px 15px 0px 10px;
+      font-size:1.5vw;
+    }
+</style>
+
+<script>
+    function header(n) {
+        if(parseInt(n) == 1) {
+            window.open("https://at216.github.io/blog/")
+        }
+        if(parseInt(n) == 2) {
+            window.open("https://at216.github.io/blog/sitemap.html")
+        }
+        if(parseInt(n) == 3) {
+            alert("I'm trying to find out what this button should do too! We'll see what happens as I work on this site :)")
+        }
+    }
+</script>
