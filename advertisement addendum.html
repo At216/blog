@@ -1,0 +1,191 @@
+
+<!--Designed to be mobile and desktop compatible simultaneously - the same code works for both mobile and desktop-->
+<!--TO DO: Fix button line-height for mobile devices-->
+<!--       This site is best viewed on desktop, because of the line-height thing and some of the embedded content :) -->
+<!DOCTYPE html>
+<title>At216's Web Blog!</title>
+<link rel="icon" type="image/x-icon" href="docs/assets/favicon_blue.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <div class='header_text'>
+        <span style='font-size:100px; line-height:100px'>At216's Web Blog!</span><br>
+        <button onclick='header(1)' style='display: inline-block' title='Main site'>Main site</button>
+        <button onclick='header(2)' style='display: inline-block' title='Subdomain sitemap'>Subdomain sitemap</button>
+        <button onclick='header(3)' style='display: inline-block' title='???'>What does this do?</button>
+        <!--Text-height influences how far the buttons are from the text (because they're in a font-sized line). -->
+    </div>
+</header>
+
+<body>
+    <div class='body_text'>
+        <br> <!--Fake padding from header-->
+        <div class='body_text'>
+            <h2>Let's talk about web advertisements (part 2)</h2>
+                <h3>Here's an advertisiment I really liked</h3>1/19/2024<br><br>
+
+            <figure>
+                <image style='width:100%' src='https://at216.github.io/blog/docs/assets/instagram.jpg' alt="A very nice internet 'advertisiment' to come across, whether real or fake"> 
+               	<figcaption style='font-size:1.5vw'>This would be very nice internet 'advertisiment' to come across</figcaption>
+            </figure>
+               
+               <br><br>
+               &nbsp;&nbsp;For those who have read my <a href="https://at216.github.io/blog/advertisements.html">previous article</a>, you 
+               may relate to my lack of pleasure for excessive internet advertisements. To come across a few advertisements every time I browse is 
+               alright, but I don't like to encounter numerous advertisements. I might even say <br>
+               <div style="padding: 0px 10% 0px 10%"><br>
+               <code >I don't like ads<br>-At216</code>
+               </div><br>
+
+               I saw the above advertisement posted by a social media user and thought that it was clever. Whether the advertisement is real or not, 
+               it made me laugh and realize that advertisements can be for fun too.
+
+        </div>
+        <br> <!--More fake padding from header-->
+   
+    </div>
+        
+</body>
+<footer>
+    <span>Written by At216, last updated 1/19/2024</span><br>
+</footer>
+
+
+<style>
+    button:hover {
+        transform: rotate(20deg);
+    }
+    iframe {
+    width:100%;
+    height:250px;
+    border:none;
+    background-color:white;
+    }
+    a {
+        color:blue;
+    }
+    td {
+        text-align: left;
+        font-size:2vw;
+        
+    }
+
+    header {
+        margin:0;
+        width:100%;
+        background-color:#33475b;
+        color:white;
+        height:auto;
+        /*line-height:100px;*/
+        line-height:50px;
+    }
+    .header_text {
+        margin:0px 10px 0px 10px;
+        /*font-size:100px;*/
+    }
+    
+
+    body {
+    margin:0;
+    width:100%;
+    background-color:#00E739;
+    color:black;
+
+    min-height: 100vh; 		/**************For footer***************/
+  	display: flex;			/**************For footer***************/
+  	flex-direction: column;	/**************For footer***************/
+    }
+    .body_text {
+        margin:5px 10% 5px 5%;
+        font-size:1.7vw;
+    }
+
+    a {
+        color:blue;
+    }
+    footer {
+      margin-top:auto;
+      margin:0px 15px 0px 10px;
+      font-size:1.5vw;
+    }
+</style>
+
+<script>
+    function header(n) {
+        if(parseInt(n) == 1) {
+            window.open("https://at216.github.io/blog/")
+        }
+        if(parseInt(n) == 2) {
+            window.open("https://at216.github.io/blog/sitemap.html")
+        }
+        if(parseInt(n) == 3) {
+            alert("I'm trying to find out what this button should do too! We'll see what happens as I work on this site :)")
+        }
+    }
+</script>
+
+
+<!--#####################################################################################################################Toggle-->
+<div class='toggleface' id='toggleface' onclick='toggle()' title="Toggle light/dark mode">
+    <span class='togglebody'id='togglebody'>☼</span>
+</div>
+    
+<style>
+.toggleface {
+    width:60px;
+    height:34px;
+    background-color:#FFDA4E;
+    border-radius:34px;
+    position:fixed;
+    bottom:4px;
+    right:4px;
+}
+.togglebody {
+    width:26px;
+    height:26px;
+    background-color:white;
+    border-radius:50%;
+    position:absolute;
+    left:28px;
+    bottom:4px;
+    text-align: center;
+    line-height: 1.5;
+}
+.togglebody1 {
+    width:26px;
+    height:26px;
+    background-color:white;
+    border-radius:50%;
+    position:absolute;
+    left:4px;
+    bottom:4px;
+    color:black;
+    text-align: center;
+    line-height: 1.5;
+}
+</style>
+    
+<script>
+var togglelogic = true;
+function toggle() {
+    if(togglelogic == true){
+        document.getElementById("togglebody").className = "togglebody1";
+        togglelogic = false;
+        document.body.style.backgroundColor = "#5B5B5B"; 
+        document.body.style.color = "white";  
+        document.getElementById("toggleface").style.backgroundColor = '#4E65FF';
+        document.getElementById('togglebody').innerHTML = '☾'
+    }
+    else{
+        document.getElementById("togglebody").className = "togglebody";
+        togglelogic = true;
+        document.body.style.backgroundColor = "#00E739"; 
+        document.body.style.color = "black";   
+        document.getElementById("toggleface").style.backgroundColor = '#FFDA4E';
+        document.getElementById('togglebody').innerHTML = '☼'
+        
+    }
+    
+}
+</script>
+<!--#####################################################################################################################Toggle-->
