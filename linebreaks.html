@@ -1,0 +1,186 @@
+
+
+<!--Designed to be mobile and desktop compatible simultaneously - the same code works for both mobile and desktop-->
+<!--TO DO: Fix button line-height for mobile devices-->
+<!--       This site is best viewed on desktop, because of the line-height thing and some of the embedded content :) -->
+<!DOCTYPE html>
+<title>At216's Web Blog!</title>
+<link rel="icon" type="image/x-icon" href="docs/assets/favicon_blue.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+    <div class='header_text'>
+        <span style='font-size:100px; line-height:100px'>At216's Web Blog!</span><br>
+        <button onclick='header(1)' style='display: inline-block' title='Main site'>Main site</button>
+        <button onclick='header(2)' style='display: inline-block' title='Subdomain sitemap'>Subdomain sitemap</button>
+        <button onclick='header(3)' style='display: inline-block' title='???'>What does this do?</button>
+        <!--Text-height influences how far the buttons are from the text (because they're in a font-sized line). -->
+    </div>
+</header>
+
+<body>
+    <div class='body_text'>
+        <br> <!--Fake padding from header-->
+        <div class='body_text'>
+            <h2>Line break standards between CSV and HTML</h2>
+                <h3>In case you were wondering</h3>1/19/2024<br><br>
+
+In CSV files (when editing the file as text), you can indicate a spreadsheet line break between rows using either a comma and line break or just simply a line break. 
+<br>Method 1: <br>
+<code>This is cell 1 on row 1,This is cell 2 on row 1,</code><br>
+<code>This is cell 3 on row 2,</code><br><br>
+<br>Method 2: <br>
+<code>This is cell 1 on row 1,This is cell 2 on row 1</code><br>
+<code>This is cell 3 on row 2</code><br><br>
+In HTML files, document line breaks are indicated by the "<br>" tag. This tag can be used anywhere in the document (except within a few other tags, such as the "<script>" tag). <br><br>
+In summary, an HTML document's line breaks are achieved using the "<br>" tag while line breaks for a CSV spreadsheet are physically inserted with the 'enter' key. These methods can't really be intermixed. Until next time! 
+
+        </div>
+        <br> <!--More fake padding from header-->
+   
+    </div>
+        
+</body>
+<footer>
+    <span>Written by At216, last updated 1/19/2024</span><br>
+</footer>
+
+
+<style>
+    button:hover {
+        transform: rotate(20deg);
+    }
+    iframe {
+    width:100%;
+    height:250px;
+    border:none;
+    background-color:white;
+    }
+    a {
+        color:blue;
+    }
+    td {
+        text-align: left;
+        font-size:2vw;
+        
+    }
+
+    header {
+        margin:0;
+        width:100%;
+        background-color:#33475b;
+        color:white;
+        height:auto;
+        /*line-height:100px;*/
+        line-height:50px;
+    }
+    .header_text {
+        margin:0px 10px 0px 10px;
+        /*font-size:100px;*/
+    }
+    
+
+    body {
+    margin:0;
+    width:100%;
+    background-color:#00E739;
+    color:black;
+
+    min-height: 100vh; 		/**************For footer***************/
+  	display: flex;			/**************For footer***************/
+  	flex-direction: column;	/**************For footer***************/
+    }
+    .body_text {
+        margin:5px 10% 5px 5%;
+        font-size:1.7vw;
+    }
+
+    a {
+        color:blue;
+    }
+    footer {
+      margin-top:auto;
+      margin:0px 15px 0px 10px;
+      font-size:1.5vw;
+    }
+</style>
+
+<script>
+    function header(n) {
+        if(parseInt(n) == 1) {
+            window.open("https://at216.github.io/blog/")
+        }
+        if(parseInt(n) == 2) {
+            window.open("https://at216.github.io/blog/sitemap.html")
+        }
+        if(parseInt(n) == 3) {
+            alert("I'm trying to find out what this button should do too! We'll see what happens as I work on this site :)")
+        }
+    }
+</script>
+
+
+<!--#####################################################################################################################Toggle-->
+<div class='toggleface' id='toggleface' onclick='toggle()' title="Toggle light/dark mode">
+    <span class='togglebody'id='togglebody'>☼</span>
+</div>
+    
+<style>
+.toggleface {
+    width:60px;
+    height:34px;
+    background-color:#FFDA4E;
+    border-radius:34px;
+    position:fixed;
+    bottom:4px;
+    right:4px;
+}
+.togglebody {
+    width:26px;
+    height:26px;
+    background-color:white;
+    border-radius:50%;
+    position:absolute;
+    left:28px;
+    bottom:4px;
+    text-align: center;
+    line-height: 1.5;
+}
+.togglebody1 {
+    width:26px;
+    height:26px;
+    background-color:white;
+    border-radius:50%;
+    position:absolute;
+    left:4px;
+    bottom:4px;
+    color:black;
+    text-align: center;
+    line-height: 1.5;
+}
+</style>
+    
+<script>
+var togglelogic = true;
+function toggle() {
+    if(togglelogic == true){
+        document.getElementById("togglebody").className = "togglebody1";
+        togglelogic = false;
+        document.body.style.backgroundColor = "#5B5B5B"; 
+        document.body.style.color = "white";  
+        document.getElementById("toggleface").style.backgroundColor = '#4E65FF';
+        document.getElementById('togglebody').innerHTML = '☾'
+    }
+    else{
+        document.getElementById("togglebody").className = "togglebody";
+        togglelogic = true;
+        document.body.style.backgroundColor = "#00E739"; 
+        document.body.style.color = "black";   
+        document.getElementById("toggleface").style.backgroundColor = '#FFDA4E';
+        document.getElementById('togglebody').innerHTML = '☼'
+        
+    }
+    
+}
+</script>
+<!--#####################################################################################################################Toggle-->
